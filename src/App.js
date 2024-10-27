@@ -1,24 +1,22 @@
-import logo from './logo.svg';
+import "bootstrap/dist/css/bootstrap.min.css";
+import React from 'react';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
+import Navbar from './Navbar/Navbar';
+import Episodes from './pages/Episodes';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar /> {/* Place Navbar outside of Routes to show on all pages */}
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/episodes" element={<Episodes />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
