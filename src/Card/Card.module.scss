@@ -1,0 +1,50 @@
+.card {
+    width: 100%; /* Use full width on smaller screens */
+    max-width: 200px; /* Limit maximum width */
+    background-color: #f5f5f5;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative; /* Needed for badge positioning */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+    
+    /* Make sure card is responsive */
+    @media (min-width: 576px) {
+      width: calc(50% - 20px); /* Two cards per row on small screens */
+    }
+    
+    @media (min-width: 992px) {
+      width: calc(33.33% - 20px); /* Three cards per row on larger screens */
+    }
+  }
+  
+  .img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover; /* Ensure the image fits well */
+  }
+  
+  .content {
+    padding: 10px;
+  }
+  
+  .badge {
+    top: 10px; /* Adjust as needed for preferred position */
+    right: 10px;
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    color: #fff;
+    border-radius: 8px;
+    z-index: 1;
+  
+    /* Responsive adjustments */
+    @media (min-width: 576px) {
+      font-size: 0.85rem; /* Slightly larger font on small screens */
+    }
+  
+    @media (min-width: 992px) {
+      font-size: 1rem; /* Regular font size on larger screens */
+    }
+  }
+  
